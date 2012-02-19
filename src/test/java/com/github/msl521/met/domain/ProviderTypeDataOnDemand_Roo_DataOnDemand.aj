@@ -4,6 +4,7 @@
 package com.github.msl521.met.domain;
 
 import com.github.msl521.met.domain.ProviderType;
+import java.lang.String;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -23,7 +24,13 @@ privileged aspect ProviderTypeDataOnDemand_Roo_DataOnDemand {
     
     public ProviderType ProviderTypeDataOnDemand.getNewTransientProviderType(int index) {
         ProviderType obj = new ProviderType();
+        setDescription(obj, index);
         return obj;
+    }
+    
+    public void ProviderTypeDataOnDemand.setDescription(ProviderType obj, int index) {
+        String description = "description_" + index;
+        obj.setDescription(description);
     }
     
     public ProviderType ProviderTypeDataOnDemand.getSpecificProviderType(int index) {

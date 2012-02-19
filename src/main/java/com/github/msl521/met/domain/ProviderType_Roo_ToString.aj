@@ -9,6 +9,7 @@ privileged aspect ProviderType_Roo_ToString {
     
     public String ProviderType.toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("Description: ").append(getDescription()).append(", ");
         sb.append("Id: ").append(getId()).append(", ");
         sb.append("Providers: ").append(getProviders() == null ? "null" : getProviders().size()).append(", ");
         sb.append("Version: ").append(getVersion());

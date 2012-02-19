@@ -3,7 +3,9 @@
 
 package com.github.msl521.met.domain;
 
+import com.github.msl521.met.domain.OfficeVisit;
 import com.github.msl521.met.domain.ProviderType;
+import java.util.Set;
 
 privileged aspect Provider_Roo_JavaBean {
     
@@ -13,6 +15,14 @@ privileged aspect Provider_Roo_JavaBean {
     
     public void Provider.setProviderType(ProviderType providerType) {
         this.providerType = providerType;
+    }
+    
+    public Set<OfficeVisit> Provider.getOfficeVisits() {
+        return this.officeVisits;
+    }
+    
+    public void Provider.setOfficeVisits(Set<OfficeVisit> officeVisits) {
+        this.officeVisits = officeVisits;
     }
     
 }

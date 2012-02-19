@@ -8,12 +8,18 @@ import com.github.msl521.met.domain.Provider;
 import java.util.HashSet;
 import javax.persistence.OneToMany;
 import javax.persistence.CascadeType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @RooJavaBean
 @RooToString
 @RooEntity
 public class ProviderType {
 
+    @NotNull
+    @Size(min = 3)
+    private String description;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "providerType")
     private Set<Provider> providers = new HashSet<Provider>();
 }

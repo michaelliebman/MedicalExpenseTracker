@@ -4,9 +4,18 @@
 package com.github.msl521.met.domain;
 
 import com.github.msl521.met.domain.Provider;
+import java.lang.String;
 import java.util.Set;
 
 privileged aspect ProviderType_Roo_JavaBean {
+    
+    public String ProviderType.getDescription() {
+        return this.description;
+    }
+    
+    public void ProviderType.setDescription(String description) {
+        this.description = description;
+    }
     
     public Set<Provider> ProviderType.getProviders() {
         return this.providers;
