@@ -4,6 +4,8 @@
 package com.github.msl521.met.domain;
 
 import com.github.msl521.met.domain.Provider;
+import com.github.msl521.met.domain.ProviderType;
+import com.github.msl521.met.domain.ProviderTypeDataOnDemand;
 import java.lang.String;
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -12,6 +14,7 @@ import java.util.List;
 import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 privileged aspect ProviderDataOnDemand_Roo_DataOnDemand {
@@ -22,15 +25,24 @@ privileged aspect ProviderDataOnDemand_Roo_DataOnDemand {
     
     private List<Provider> ProviderDataOnDemand.data;
     
+    @Autowired
+    private ProviderTypeDataOnDemand ProviderDataOnDemand.providerTypeDataOnDemand;
+    
     public Provider ProviderDataOnDemand.getNewTransientProvider(int index) {
         Provider obj = new Provider();
         setName(obj, index);
+        setProviderType(obj, index);
         return obj;
     }
     
     public void ProviderDataOnDemand.setName(Provider obj, int index) {
         String name = "name_" + index;
         obj.setName(name);
+    }
+    
+    public void ProviderDataOnDemand.setProviderType(Provider obj, int index) {
+        ProviderType providerType = providerTypeDataOnDemand.getRandomProviderType();
+        obj.setProviderType(providerType);
     }
     
     public Provider ProviderDataOnDemand.getSpecificProvider(int index) {

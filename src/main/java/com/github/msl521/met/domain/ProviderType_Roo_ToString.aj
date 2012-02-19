@@ -5,13 +5,12 @@ package com.github.msl521.met.domain;
 
 import java.lang.String;
 
-privileged aspect Provider_Roo_ToString {
+privileged aspect ProviderType_Roo_ToString {
     
-    public String Provider.toString() {
+    public String ProviderType.toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Id: ").append(getId()).append(", ");
-        sb.append("Name: ").append(getName()).append(", ");
-        sb.append("ProviderType: ").append(getProviderType()).append(", ");
+        sb.append("Providers: ").append(getProviders() == null ? "null" : getProviders().size()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();
     }
