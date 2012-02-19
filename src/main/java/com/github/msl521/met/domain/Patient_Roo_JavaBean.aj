@@ -4,7 +4,9 @@
 package com.github.msl521.met.domain;
 
 import com.github.msl521.met.domain.Gender;
+import com.github.msl521.met.domain.OfficeVisit;
 import java.lang.String;
+import java.util.Set;
 
 privileged aspect Patient_Roo_JavaBean {
     
@@ -70,6 +72,14 @@ privileged aspect Patient_Roo_JavaBean {
     
     public void Patient.setComment(String comment) {
         this.comment = comment;
+    }
+    
+    public Set<OfficeVisit> Patient.getOfficeVisits() {
+        return this.officeVisits;
+    }
+    
+    public void Patient.setOfficeVisits(Set<OfficeVisit> officeVisits) {
+        this.officeVisits = officeVisits;
     }
     
 }

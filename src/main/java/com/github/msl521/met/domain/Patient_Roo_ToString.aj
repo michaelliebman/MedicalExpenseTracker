@@ -16,6 +16,7 @@ privileged aspect Patient_Roo_ToString {
         sb.append("LastName: ").append(getLastName()).append(", ");
         sb.append("MiddleName: ").append(getMiddleName()).append(", ");
         sb.append("Nickname: ").append(getNickname()).append(", ");
+        sb.append("OfficeVisits: ").append(getOfficeVisits() == null ? "null" : getOfficeVisits().size()).append(", ");
         sb.append("PersonalTitle: ").append(getPersonalTitle()).append(", ");
         sb.append("Suffix: ").append(getSuffix()).append(", ");
         sb.append("Version: ").append(getVersion());
