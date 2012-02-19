@@ -7,7 +7,6 @@ import com.github.msl521.met.domain.Patient;
 import javax.persistence.ManyToOne;
 import com.github.msl521.met.domain.Provider;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 @RooJavaBean
 @RooToString
