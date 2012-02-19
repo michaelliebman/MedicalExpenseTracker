@@ -3,7 +3,9 @@
 
 package com.github.msl521.met.domain;
 
+import com.github.msl521.met.domain.Payment;
 import java.lang.Long;
+import java.util.Set;
 
 privileged aspect Party_Roo_JavaBean {
     
@@ -13,6 +15,14 @@ privileged aspect Party_Roo_JavaBean {
     
     public void Party.setId(Long id) {
         this.id = id;
+    }
+    
+    public Set<Payment> Party.getPayments() {
+        return this.payments;
+    }
+    
+    public void Party.setPayments(Set<Payment> payments) {
+        this.payments = payments;
     }
     
 }

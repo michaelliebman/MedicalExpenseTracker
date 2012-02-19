@@ -12,6 +12,7 @@ privileged aspect Provider_Roo_ToString {
         sb.append("Id: ").append(getId()).append(", ");
         sb.append("Name: ").append(getName()).append(", ");
         sb.append("OfficeVisits: ").append(getOfficeVisits() == null ? "null" : getOfficeVisits().size()).append(", ");
+        sb.append("Payments: ").append(getPayments() == null ? "null" : getPayments().size()).append(", ");
         sb.append("ProviderType: ").append(getProviderType()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();

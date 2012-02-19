@@ -5,13 +5,16 @@ package com.github.msl521.met.domain;
 
 import java.lang.String;
 
-privileged aspect Insurer_Roo_ToString {
+privileged aspect Payment_Roo_ToString {
     
-    public String Insurer.toString() {
+    public String Payment.toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("Amount: ").append(getAmount()).append(", ");
+        sb.append("CheckNumber: ").append(getCheckNumber()).append(", ");
         sb.append("Id: ").append(getId()).append(", ");
-        sb.append("Name: ").append(getName()).append(", ");
-        sb.append("Payments: ").append(getPayments() == null ? "null" : getPayments().size()).append(", ");
+        sb.append("OfficeVisit: ").append(getOfficeVisit()).append(", ");
+        sb.append("Payee: ").append(getPayee()).append(", ");
+        sb.append("PaymentDate: ").append(getPaymentDate()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();
     }

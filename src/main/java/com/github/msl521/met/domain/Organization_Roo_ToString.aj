@@ -11,6 +11,7 @@ privileged aspect Organization_Roo_ToString {
         StringBuilder sb = new StringBuilder();
         sb.append("Id: ").append(getId()).append(", ");
         sb.append("Name: ").append(getName()).append(", ");
+        sb.append("Payments: ").append(getPayments() == null ? "null" : getPayments().size()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();
     }

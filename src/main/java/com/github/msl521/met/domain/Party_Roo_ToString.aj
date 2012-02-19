@@ -10,6 +10,7 @@ privileged aspect Party_Roo_ToString {
     public String Party.toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Id: ").append(getId()).append(", ");
+        sb.append("Payments: ").append(getPayments() == null ? "null" : getPayments().size()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();
     }

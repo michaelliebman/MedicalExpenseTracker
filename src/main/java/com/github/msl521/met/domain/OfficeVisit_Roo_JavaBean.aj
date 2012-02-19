@@ -4,7 +4,9 @@
 package com.github.msl521.met.domain;
 
 import com.github.msl521.met.domain.Patient;
+import com.github.msl521.met.domain.Payment;
 import com.github.msl521.met.domain.Provider;
+import java.util.Set;
 
 privileged aspect OfficeVisit_Roo_JavaBean {
     
@@ -22,6 +24,14 @@ privileged aspect OfficeVisit_Roo_JavaBean {
     
     public void OfficeVisit.setProvider(Provider provider) {
         this.provider = provider;
+    }
+    
+    public Set<Payment> OfficeVisit.getPayments() {
+        return this.payments;
+    }
+    
+    public void OfficeVisit.setPayments(Set<Payment> payments) {
+        this.payments = payments;
     }
     
 }
