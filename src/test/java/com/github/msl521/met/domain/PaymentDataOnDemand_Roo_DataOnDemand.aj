@@ -5,7 +5,6 @@ package com.github.msl521.met.domain;
 
 import com.github.msl521.met.domain.OfficeVisit;
 import com.github.msl521.met.domain.OfficeVisitDataOnDemand;
-import com.github.msl521.met.domain.Party;
 import com.github.msl521.met.domain.Payment;
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -58,11 +57,6 @@ privileged aspect PaymentDataOnDemand_Roo_DataOnDemand {
     public void PaymentDataOnDemand.setOfficeVisit(Payment obj, int index) {
         OfficeVisit officeVisit = officeVisitDataOnDemand.getRandomOfficeVisit();
         obj.setOfficeVisit(officeVisit);
-    }
-    
-    public void PaymentDataOnDemand.setPayee(Payment obj, int index) {
-        Party payee = null;
-        obj.setPayee(payee);
     }
     
     public void PaymentDataOnDemand.setPaymentDate(Payment obj, int index) {
